@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>Inventario de Productos</h1> <!-- Título de la página -->
+    <main>
+
+<header>
+    <button id="btn">Agregar</button>
+    <button id="btna">Actualizar</button>
+    <button id="btnd">Eliminar</button>
+</header>
+
+    <div class="centrar"> <!-- Contenedor centrado -->
+
+        <table border="1"> <!-- Tabla con borde -->
+            <thead> <!-- Encabezado de la tabla -->
+                <tr> <!-- Fila del encabezado -->
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabla"> <!-- Cuerpo de la tabla donde se agregarán los productos dinámicamente -->
+            </tbody>
+        </table>
+
+    </div>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
