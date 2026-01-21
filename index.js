@@ -11,7 +11,9 @@
   addDoc,
   updateDoc,
   deleteDoc,
-  doc
+  doc,
+  query,
+  orderBy
 } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
@@ -46,8 +48,8 @@ let productos = [];
 async function cargarproductos() {
 
  productos = []; 
-
-    const snapshot = await getDocs(collection (db, 'productos'))
+    const q = query(collection(db, 'productos'), orderBy('createdAt', 'asc'))
+    const snapshot = await getDocs(q)
 
     snapshot.forEach((docSnap)=>{
 
@@ -76,7 +78,8 @@ const producto ={
     nombre,
     precio,
     cantidad,
-    total: precio * cantidad
+    total: precio * cantidad,
+    createdAt: new Date()
 }
 await addDoc(collection(db, 'productos'), producto)
 await cargarproductos()
